@@ -86,6 +86,8 @@ public class PrefabPainter : EditorWindow
             isPainting = !isPainting;
             if (isPainting)
             {
+                // Clear the undo stack when starting to paint
+                placedObjects.Clear();
                 SceneView.duringSceneGui += OnSceneGUI;
             }
             else
